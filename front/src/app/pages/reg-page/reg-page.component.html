@@ -1,0 +1,41 @@
+<div class="main">
+  <div class="logoDiv">
+    <img src="telega_logo.jpeg" alt="" />
+    <p>Telega</p>
+  </div>
+  <div class="reg">
+    <div class="signIn">
+      <p>Зарегестрироваться</p>
+
+      <input
+        type="text"
+        placeholder="login"
+        [(ngModel)]="loginField"
+        (ngOnChange)="changeLoginField($event)"
+      />
+
+      <input
+        type="text"
+        placeholder="password"
+        [(ngModel)]="passwordField"
+        (ngOnChange)="changePasswordField($event)"
+      />
+
+      <input
+        type="text"
+        placeholder="confirm password"
+        [(ngModel)]="confirmPassField"
+        (ngOnChange)="changeConfirmPassField($event)"
+      />
+
+      <button class="b" (click)="sendPostRegistration()">
+        Зарегестрироваться
+      </button>
+    </div>
+    <div class="signUp">
+      <p>Войти</p>
+      <input type="text" /><input type="text" /><input type="text" />
+      <button class="b">Войти</button>
+    </div>
+  </div>
+</div>

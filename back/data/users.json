@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "login": "33",
+    "password": "44",
+    "constactIDs": [],
+    "chatIDs": []
+  },
+  {
+    "id": 2,
+    "login": "гггг",
+    "password": "123",
+    "constactIDs": [],
+    "chatIDs": []
+  }
+]

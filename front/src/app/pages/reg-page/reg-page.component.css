@@ -1,0 +1,80 @@
+/* Основной контейнер */
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px auto; /* Центрирование с отступом сверху */
+    width: 80%;
+    max-width: 800px;
+  }
+  
+  /* Блок с логотипом и названием */
+  .logoDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+  
+  .logoDiv img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 20px;
+    border-radius: 10px;
+  }
+  
+  .logoDiv p {
+    font-size: 36px;
+    font-weight: bold;
+  }
+  
+  /* Контейнер для входа/регистрации */
+  .reg {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+  
+  /* Блоки входа и регистрации */
+  .signIn,
+  .signUp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 300px; /* Ширина блоков можно корректировать под макет */
+  }
+  
+  /* Заголовки внутри блоков */
+  .signIn p,
+  .signUp p {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  /* Поля ввода */
+  .signIn input,
+  .signUp input {
+    width: 80%;
+    padding: 8px;
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  
+  /* Кнопки */
+  .b {
+    width: 50%;
+    padding: 10px;
+    background-color: #fff;
+    color: red;
+    border: none;
+    cursor: pointer;
+    border: 1px solid red;
+  }
+
+  .b:hover {
+    background-color: red;
+    color: #fff;
+  }
