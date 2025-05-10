@@ -42,6 +42,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-around;
     border: 1px solid #ccc;
     padding: 20px;
     width: 300px; /* Ширина блоков можно корректировать под макет */

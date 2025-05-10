@@ -4,7 +4,7 @@ import { RegPageComponent } from './pages/reg-page/reg-page.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, RegPageComponent],
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

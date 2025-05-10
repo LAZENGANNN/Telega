@@ -61,11 +61,23 @@ function getNewObjID(fileName) {
     const filePath = path.join(__dirname, `../data/${fileName}.json`);
     const data = JSON.parse(fs.readFileSync(filePath));
 
-    const id = (data.reverse()[0].id || 0);
+    const id = data.reverse()[0].id.slice(1) || 0;
 
-    return id + 1;
+    return Number(id) + 1;
   } catch (e) {
     console.error(e);
+  }
+}
+
+function getObjByID(fileName, ID) {
+  switch (fileName) {
+    case "users":
+      const filePath = path.join(__dirname, `../data/${fileName}.json`);
+      const data = JSON.parse(fs.readFileSync(filePath));
+
+      const user = data.find((el) => el.ID === ID);
+
+      return user;
   }
 }
 
@@ -86,4 +98,5 @@ module.exports = {
   clearFile,
   getLength,
   getNewObjID,
+  getObjByID,
 };

@@ -1,4 +1,6 @@
 const express = require("express");
+const session = require("express-session");
+
 const path = require("path");
 const http = require("http");
 
@@ -8,6 +10,7 @@ const { Server } = require("socket.io");
 const { mainRouter } = require("./routers/main");
 const { console } = require("inspector");
 const { usersRouter } = require("./routers/userRouter");
+const { chatsRouter } = require("./routers/chatsRouter");
 
 const app = express();
 
@@ -28,11 +31,17 @@ app.use(
 app.use(bodyParser.json());
 app.use(express.json());
 
+app.use(session({
+   secret: "sessionSecret", 
+   resave: true, 
+   saveUninitialized: true }));
+
 // app.post("/angular-app/user/create", (req, res) => {
 //   res.send(`${req.body.login} --- ${req.body.password}`);
 // });
 
-app.use("/angular-app/user/",  usersRouter);
+app.use("/angular-app/user/", usersRouter);
+app.use("/angular-app/chats/", chatsRouter);
 
 // app.get("/angular-app/*", (req, res) => {
 //   res.sendFile(path.join(appPath, "index.html"));

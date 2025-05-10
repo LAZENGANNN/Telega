@@ -34,8 +34,30 @@
     </div>
     <div class="signUp">
       <p>Войти</p>
-      <input type="text" /><input type="text" /><input type="text" />
-      <button class="b">Войти</button>
+
+      <input
+        type="text"
+        placeholder="login"
+        [(ngModel)]="authLoginField"
+        (ngOnChange)="changeAuthLoginField($event)"
+      />
+
+      <input
+        type="text"
+        placeholder="password"
+        [(ngModel)]="authPassField"
+        (ngOnChange)="changeAuthPassField($event)"
+      />
+
+      <!-- <button
+        routerLink="/chats"
+        routerLinkActive="active-link"
+        class="b"
+        (click)="sendPostAuthentication()"
+      >
+        Войти
+      </button> -->
+      <button class="b" (click)="sendPostAuthentication()">Войти</button>
     </div>
   </div>
 </div>

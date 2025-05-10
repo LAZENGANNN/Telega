@@ -1,15 +1,29 @@
 [
   {
-    "id": 1,
-    "login": "33",
-    "password": "44",
+    "ID": "U1",
+    "login": "1",
+    "password": "1",
+    "constactIDs": [],
+    "chatIDs": ["C1"]
+  },
+  {
+    "ID": "U2",
+    "login": "2",
+    "password": "1",
     "constactIDs": [],
     "chatIDs": []
   },
   {
-    "id": 2,
-    "login": "гггг",
-    "password": "123",
+    "ID": "U3",
+    "login": "112313",
+    "password": "11441441",
+    "constactIDs": [],
+    "chatIDs": []
+  },
+  {
+    "ID": "U4",
+    "login": "123",
+    "password": "1232323",
     "constactIDs": [],
     "chatIDs": []
   }
