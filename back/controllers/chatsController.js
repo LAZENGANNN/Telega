@@ -10,18 +10,14 @@ module.exports = {
 
     const chats = getData("chats");
 
-    console.log(chatIDs, chats);
-
     chats.forEach((el) => {
       if (chatIDs.includes(el.ID)) {
         let chatWith = "";
 
-        console.log(el.usersIDs[1]);
-
         if (el.usersIDs[0] === req.session.currentUserID) {
-          chatWith = getObjByID("users", el.usersIDs[0]).login;
-        } else {
           chatWith = getObjByID("users", el.usersIDs[1]).login;
+        } else {
+          chatWith = getObjByID("users", el.usersIDs[0]).login;
         }
 
         const chat = {
@@ -36,4 +32,8 @@ module.exports = {
 
     res.send(JSON.stringify(data));
   },
+  userEnteredChat(req, res){
+    console.log(`user ${req.body.userName} Entered Chat!`)
+    res.send(`user ${req.body.userName} Entered Chat!`)
+  }
 };

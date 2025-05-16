@@ -2,11 +2,12 @@
 .main {
     display: flex;
     height: 100vh; /* Полная высота экрана */
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
   }
   
   /* Боковая панель со списком чатов */
-  .chatsList {
-    width: 300px;                /* Фиксированная ширина боковой панели */
+  .chatsList {             /* Фиксированная ширина боковой панели */
     background-color: #f5f5f5;     /* Светлый фон для отделения от основного контента */
     border-right: 1px solid #ccc; /* Вертикальная разделительная линия */
     display: flex; 

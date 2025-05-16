@@ -30,6 +30,7 @@ const auth = (req, res) => {
     return;
   }
 
+  req.session.isAuth = true;
   req.session.currentUserID = currentUser.ID;
   res.send("success");
   // res.send(`${req.session.currentUserID}`)
@@ -68,4 +69,10 @@ module.exports = {
   isLoginOrginal,
   auth,
   checkAuth,
+  logout(req, res) {
+    req.session.isAuth = false;
+    req.session.currentUserID = null;
+
+    res.send("success")
+  },
 };

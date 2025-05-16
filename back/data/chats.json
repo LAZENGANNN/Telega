@@ -8,5 +8,15 @@
         "text": "hello world"
       }
     ]
+  },
+  {
+    "ID": "C2",
+    "usersIDs": ["U1", "U3"],
+    "messages": [
+      {
+        "autorID": "U1",
+        "text": "hello world"
+      }
+    ]
   }
 ]

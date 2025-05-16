@@ -5,6 +5,7 @@ const {
   isLoginOrginal,
   auth,
   checkAuth,
+  logout,
 } = require("../controllers/userController");
 const usersRouter = express.Router();
 
@@ -29,6 +30,11 @@ usersRouter.get("/checkAuth", (req, res) => {
 
   res.send(JSON.stringify({ isAuth: isAuth }));
 });
+
+usersRouter.get("/logout", (req,res)=>{
+  logout(req,res)
+
+})
 
 module.exports = {
   usersRouter,

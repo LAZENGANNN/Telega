@@ -1,0 +1,61 @@
+*{
+    border: 1px solid black;
+}
+
+/* Основной контейнер: используется flexbox для вертикального расположения */
+.main {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Занимает всю высоту окна */
+}
+
+/* Контейнер сообщений: занимает всё доступное пространство кроме блока ввода */
+.messagesDiv {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto; /* Позволяет прокручивать список сообщений при переполнении */
+  background-color: #f7f7f7; /* Лёгкий фон для зоны сообщений */
+}
+
+/* Каждый блок сообщения оформлен как карточка с отступами и тенями */
+.message {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Блок ввода: расположен внизу, выравнивается по центру */
+.inputDiv {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 10px 15px;
+  border-top: 1px solid #ddd;
+  background-color: #fff;
+}
+
+/* Поле ввода занимает всё доступное пространство слева от кнопки */
+.inputDiv input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+/* Кнопка отправки имеет акцентный цвет и эффект наведения */
+.inputDiv button {
+  padding: 8px 16px;
+  background-color: white;
+  border: 1px solid red;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.inputDiv button:hover {
+  background-color: red;
+}

@@ -4,7 +4,7 @@
     "login": "1",
     "password": "1",
     "constactIDs": [],
-    "chatIDs": ["C1"]
+    "chatIDs": ["C1", "C2"]
   },
   {
     "ID": "U2",

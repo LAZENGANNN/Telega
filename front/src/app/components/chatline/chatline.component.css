@@ -1,0 +1,44 @@
+.cont {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc; /* Легкая линия разделения */
+}
+
+.b{
+  width: 100%;
+}
+
+.c2 {
+  display: flex;
+  align-items: center;
+}
+
+img {
+  width: 50px; /* Размер аватара */
+  height: 50px;
+  border-radius: 50%; /* Круглый аватар */
+  margin-right: 10px; /* Расстояние между изображением и текстом */
+}
+
+.c3 {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-weight: bold; /* Имя выделено жирным */
+  font-size: 16px; /* Удобный для чтения размер шрифта */
+}
+
+.lastMess {
+  color: #888; /* Светлый оттенок для текста последнего сообщения */
+  font-size: 14px;
+}
+
+.lastBeen {
+  color: #555; /* Темный оттенок для времени */
+  font-size: 12px;
+  text-align: right;
+}

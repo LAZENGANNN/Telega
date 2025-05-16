@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import axios from 'axios';
 import { ChatLineInterface } from '../../../interfaces/interfaces';
 
@@ -10,16 +10,24 @@ export class ChatsService {
     this.getChatsList();
   }
 
-  private _chatsList: ChatLineInterface[] | null = null;
+  private _chatsList: ChatLineInterface[] = [];
 
-  async getChatsList(): Promise<ChatLineInterface[]> {
+  dataChanged = new EventEmitter<ChatLineInterface[]>();
+
+  async getChatsList() {
     const res = await axios.get('/angular-app/chats/getChatsList');
 
     let data = res.data;
     console.log(data, 'service');
 
-    this._chatsList = data
-    return data;
+    this.dataChanged.emit(data);
+  }
+
+  async userEnteredChat(userName: string| undefined){
+    console.log(userName)
+    const res = await axios.post('/angular-app/chats/userEnteredChat', {
+      userName,
+    });
   }
 
   public get chatsList() {

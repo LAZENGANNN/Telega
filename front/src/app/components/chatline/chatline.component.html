@@ -1,0 +1,15 @@
+<div class="cont">
+  <button class="b" [value]="chatLine?.chatWith" (click)="clickOnChatLine($event)">
+    <div class="c2">
+      <img src="contactPic.png" alt="" />
+      <div class="c3">
+        <p class="name">{{ chatLine?.chatWith }}</p>
+        <p class="lastMess">messss</p>
+        <!-- <p class="lastMess">{{ chatLine?.nickname }}</p> -->
+      </div>
+    </div>
+    <div class="lastBeen">11:11</div>
+  </button>
+
+  <!-- <div class="lastBeen">{{ chatLine?.last }}</div> -->
+</div>

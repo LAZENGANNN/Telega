@@ -6,19 +6,20 @@ import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-reg-page',
-  imports: [CommonModule, FormsModule, RouterLink, RouterLinkActive],
+  imports: [CommonModule, FormsModule],
   templateUrl: './reg-page.component.html',
   styleUrl: './reg-page.component.css',
 })
 export class RegPageComponent {
-  constructor(private AuthService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   loginField: string = '';
   passwordField: string = '';
   confirmPassField: string = '';
 
-  authLoginField: string = ''
-  authPassField: string = ''
+  isAuth: boolean = false;
+  authLoginField: string = '';
+  authPassField: string = '';
 
   changeLoginField(event: Event): void {
     this.loginField = (event.target as HTMLInputElement).value;
@@ -42,7 +43,7 @@ export class RegPageComponent {
       this.passwordField != '' &&
       this.passwordField === this.confirmPassField
     ) {
-      this.AuthService.registrate(this.loginField, this.passwordField);
+      this.authService.registrate(this.loginField, this.passwordField);
     } else if (this.loginField === '' || this.passwordField === '') {
       alert('заполните все поля');
     } else if (this.passwordField != this.confirmPassField) {
@@ -50,18 +51,20 @@ export class RegPageComponent {
     }
   }
 
-  sendPostAuthentication():void{
-    if(
-      this.authLoginField != '' &&
-      this.authPassField != ''
-    ){
-      this.AuthService.authenticate(this.authLoginField, this.authPassField)
-      // this.router.navigate(['/chats'])
+  sendPostAuthentication(): void {
+    if (this.authLoginField != '' && this.authPassField != '') {
+      this.authService.authenticate(this.authLoginField, this.authPassField);
     }
   }
 
-  // ngOnInit(): void {
-  //   console.log('init');
-  //   this.resService.test();
-  // }
+  ngOnInit(): void {
+    const b = localStorage.getItem('isAuthenticated');
+    if (b) {
+      console.log(
+        localStorage.getItem('isAuthenticated'),
+        localStorage.getItem('userData')
+      );
+      this.router.navigate(['/chats']);
+    }
+  }
 }
